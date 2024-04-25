@@ -4,20 +4,21 @@ const convertBtn = document.querySelector("#convert-env");
 const copy = document.querySelector("#copy");
 const copied = document.querySelector("#copied");
 
+
 function convert() {
     const value = envInput.value;
-    const lines = value.split("\n");
+    const lines = value.replace(/'/g, "\"").replace(/\s/g, "").replace("{\"env\":{", "").split("}")[0].split(",")
     let joined = [];
+
     lines.forEach((line) => {
-        line = line.split("=");
-        if (line.length === 2) {
-            line = `"${line[0]}": "${line[1]}"`;
-        }
+        line = line.replace(/'/g, "").replace(/"/g, "").replace(":", "=");
         joined = [...joined, line]
-    });
-    const output = `{\n  "env":  {\n  ${joined.join(",\n  ")}\n  }\n}`;
+    })
+
+    const output = joined.join("\n");
     envOutput.innerHTML = output;
     envOutput.classList.remove("hidden");
+
     return output;
 }
 

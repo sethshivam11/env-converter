@@ -9,6 +9,18 @@ div {
   display: none;
 }
 
+textarea{
+  padding: 5px;
+  border-radius: 2px;
+  resize: vertical;
+  width: 50%;
+}
+
+textarea:disabled{
+  background: white;
+  color: grey;
+}
+
 #copied {
   margin: 0;
   color: green;
@@ -31,18 +43,6 @@ label[for=env-input]{
     font-size: 20px;
     font-family: sans-serif;
     margin-top: 20px;
-}
-
-textarea{
-  padding: 5px;
-  border-radius: 2px;
-  resize: vertical;
-  width: 50%;
-}
-
-textarea:disabled{
-  background: white;
-  color: grey;
 }
 
 #copy, #convert-env, #nodemon{
