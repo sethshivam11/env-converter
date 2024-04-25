@@ -10,6 +10,7 @@ function convert() {
     let joined = [];
     lines.forEach((line) => {
         line = line.split("=");
+        line[1] = line[1].replace(/"/g, "").replace(/'/g, "");
         if (line.length === 2) {
             line = `"${line[0]}": "${line[1]}"`;
         }

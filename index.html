@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Env to Nodemon Env</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <label for="env-input">Env to Nodemon.json</label>
+    <label for="env-input">Env to Nodemon</label>
     <textarea type="text" id="env-input" rows="15" cols="50"></textarea>
     <div>
         <button id="convert-env" disabled>Convert</button>
         <button id="copy" disabled>Convert and Copy</button>
-        <button id="nodemon" onclick="location.href = '/nodemon'">Nodemon to Env</button>
+        <button id="nodemon" onclick="location.href = window.location.href + 'nodemon'">Nodemon to Env</button>
     </div>
     <div id="copied" class="hidden">Copied successully</div>
     <textarea type="text" id="env-output" disabled rows="15" cols="50" class="hidden"></textarea>
 </body>
 <script src="script.js"></script>
+
 </html>

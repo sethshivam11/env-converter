@@ -11,7 +11,7 @@ function convert() {
     let joined = [];
 
     lines.forEach((line) => {
-        line = line.replace(/'/g, "").replace(/"/g, "").replace(":", "=");
+        line = line.replace(/"/g, "").replace(":", "=");
         joined = [...joined, line]
     })
 
